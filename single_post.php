@@ -33,10 +33,6 @@
 				</div>
 			<?php endif ?>
 			</div>
-		
-			
-			<!-- comments section -->
-			
 		</div>
 
 		<!-- post sidebar -->

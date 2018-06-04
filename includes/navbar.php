@@ -39,6 +39,7 @@ li a:hover:not(.active) {
 <body>
 <ul>
   <li style="float:left"; id ="logo"><a href="index.php">Hanu News Portal</a></li>
+  <li style="float:right" id ="button"><a href="search.php">Search</a></li>
   <?php if (isset($_SESSION['user']['username'])) { ?>
         <li style="float:right" id="button"><a href="logout.php">Logout</a></li>
         <li style="float:right" id="button"><a href="admin/dashboard.php">Welcome <?php echo $_SESSION['user']['username'] ?></a></li>

@@ -35,8 +35,8 @@
 				<span>(Feature coming soon)</span>
 			</a>
 			<a>
-				<span>43</span> <br>
-				<span>Published comments</span><br>
+				<span>0</span> <br>
+				<span>Number of views</span><br>
 				<span>(Feature coming soon)</span>
 			</a>
 		</div>
