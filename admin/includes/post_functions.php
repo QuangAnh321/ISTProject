@@ -17,37 +17,21 @@ function getAllPosts()
 {
 	global $conn;
 	
-	// Admin can view all posts
-	// Author can only view their posts
 	if ($_SESSION['user']['role'] == "Admin") {
 		$sql = "SELECT * FROM posts";
-	} elseif ($_SESSION['user']['role'] == "Student") {
-		$user_id = $_SESSION['user']['id'];
-		$sql = "SELECT * FROM posts WHERE user_id=$user_id";
 	}
 	$result = mysqli_query($conn, $sql);
 	$posts = mysqli_fetch_all($result, MYSQLI_ASSOC);
 
 	$final_posts = array();
 	foreach ($posts as $post) {
-		$post['Student'] = getPostAuthorById($post['user_id']);
+		
 		array_push($final_posts, $post);
 	}
 	return $final_posts;
 }
-// get the author/username of a post
-function getPostAuthorById($user_id)
-{
-	global $conn;
-	$sql = "SELECT username FROM users WHERE id=$user_id";
-	$result = mysqli_query($conn, $sql);
-	if ($result) {
-		// return username
-		return mysqli_fetch_assoc($result)['username'];
-	} else {
-		return null;
-	}
-}
+
+
 /* - - - - - - - - - - 
 -  Post actions
 - - - - - - - - - - -*/
@@ -83,7 +67,7 @@ function createPost($request_values)
 		if (isset($request_values['publish'])) {
 			$published = esc($request_values['publish']);
 		}
-		// create slug: if title is "The Storm Is Over", return "the-storm-is-over" as slug
+		// create slug: if title is "Hello Everyone", return "hello-everyone" as slug
 		$post_slug = makeSlug($title);
 		// validate form
 		if (empty($title)) { array_push($errors, "Post title is required"); }
@@ -147,7 +131,7 @@ function createPost($request_values)
 		if (isset($request_values['topic_id'])) {
 			$topic_id = esc($request_values['topic_id']);
 		}
-		// create slug: if title is "The Storm Is Over", return "the-storm-is-over" as slug
+		// create slug: if title is "Hello Everyone", return "hello-everyone" as slug
 		$post_slug = makeSlug($title);
 
 		if (empty($title)) { array_push($errors, "Post title is required"); }

@@ -25,19 +25,19 @@
 		<h1>Welcome</h1>
 		<div class="stats">
 			<a href="users.php" class="first">
-				<span>43</span> <br>
+				<span>20</span> <br>
 				<span>Newly registered users</span><br>
-				<span>(Illustrating purpose only)</span>
+				<span>(Feature coming soon)</span>
 			</a>
 			<a href="posts.php">
-				<span>43</span> <br>
+				<span>20</span> <br>
 				<span>Published posts</span><br>
-				<span>(Illustrating purpose only)</span>
+				<span>(Feature coming soon)</span>
 			</a>
 			<a>
 				<span>43</span> <br>
 				<span>Published comments</span><br>
-				<span>(Illustrating purpose only)</span>
+				<span>(Feature coming soon)</span>
 			</a>
 		</div>
 		<br><br><br>

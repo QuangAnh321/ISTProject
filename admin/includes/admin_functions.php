@@ -193,7 +193,7 @@ function getAllTopics() {
 function createTopic($request_values){
 	global $conn, $errors, $topic_name;
 	$topic_name = esc($request_values['topic_name']);
-	// create slug: if topic is "Life Advice", return "life-advice" as slug
+	// create slug
 	$topic_slug = makeSlug($topic_name);
 	// validate form
 	if (empty($topic_name)) { 
@@ -233,7 +233,7 @@ function updateTopic($request_values) {
 	global $conn, $errors, $topic_name, $topic_id;
 	$topic_name = esc($request_values['topic_name']);
 	$topic_id = esc($request_values['topic_id']);
-	// create slug: if topic is "Life Advice", return "life-advice" as slug
+	// create slug
 	$topic_slug = makeSlug($topic_name);
 	// validate form
 	if (empty($topic_name)) { 
@@ -259,13 +259,8 @@ function deleteTopic($topic_id) {
 		exit(0);
 	}
 }
-/* * * * * * * * * * * * * * * * * * * * *
-* - Escapes form submitted value, hence, preventing SQL injection
-* * * * * * * * * * * * * * * * * * * * * */
 function esc(String $value){
-	// bring the global db connect object into function
 	global $conn;
-	// remove empty space sorrounding string
 	$val = trim($value); 
 	$val = mysqli_real_escape_string($conn, $value);
 	return $val;

@@ -12,14 +12,7 @@ ul {
 #button {
     padding: 14px 16px;
 }
-#button2 {
-    display: block;
-    color: white;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
-    vertical-align : middle;
-}
+
 li a {
     display: block;
     color: white;

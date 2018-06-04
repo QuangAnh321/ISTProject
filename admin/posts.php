@@ -29,10 +29,8 @@
 				<table class="table">
 						<thead>
 						<th>N</th>
-						<th>Author</th>
 						<th>Title</th>
 						<th>Views</th>
-						<!-- Only Admin can publish/unpublish post -->
 						<?php if ($_SESSION['user']['role'] == "Admin"): ?>
 							<th><small>Publish</small></th>
 						<?php endif ?>
@@ -43,7 +41,7 @@
 					<?php foreach ($posts as $key => $post): ?>
 						<tr>
 							<td><?php echo $key + 1; ?></td>
-							<td><?php echo $post['Student']; ?></td>
+						
 							<td>
 								<a 	target="_blank"
 								href="<?php echo BASE_URL . 'single_post.php?post-slug=' . $post['slug'] ?>">
@@ -52,7 +50,7 @@
 							</td>
 							<td><?php echo $post['views']; ?></td>
 							
-							<!-- Only Admin can publish/unpublish post -->
+							
 							<?php if ($_SESSION['user']['role'] == "Admin" ): ?>
 								<td>
 								<?php if ($post['published'] == true): ?>

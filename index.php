@@ -14,7 +14,7 @@
 
     <?php $posts = getPublishedPosts(); ?>
     <div class="content">
-        <h2 class="content-title">All article</h2>
+        <h2 class="content-title">All articles</h2>
         <hr>
         <?php foreach ($posts as $post): ?>
 	        <div class="post" style="margin-left: 0px;">
