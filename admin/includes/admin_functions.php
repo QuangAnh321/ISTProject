@@ -198,6 +198,8 @@ function createTopic($request_values){
 	// validate form
 	if (empty($topic_name)) { 
 		array_push($errors, "Topic name required"); 
+	} elseif (preg_match("/([%\@$#\*]+)/", $topic_name)) {
+		array_push($errors, "Invalid input"); 
 	}
 	// Ensure that no topic is saved twice. 
 	$topic_check_query = "SELECT * FROM topics WHERE slug='$topic_slug' LIMIT 1";
